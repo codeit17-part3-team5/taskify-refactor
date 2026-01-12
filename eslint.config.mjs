@@ -1,13 +1,21 @@
 import { defineConfig, globalIgnores } from "eslint/config";
 import nextVitals from "eslint-config-next/core-web-vitals";
 import nextTs from "eslint-config-next/typescript";
+import prettier from "eslint-config-prettier";
+import simpleImportSort from "eslint-plugin-simple-import-sort";
+import unusedImports from "eslint-plugin-unused-imports";
 
 const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
+  prettier,
 
   // 프로젝트 룰 추가
   {
+    plugins: {
+      "unused-imports": unusedImports,
+      "simple-import-sort": simpleImportSort,
+    },
     rules: {
       // 코드 정리
       "unused-imports/no-unused-imports": "error",
@@ -21,10 +29,7 @@ const eslintConfig = defineConfig([
 
       // 타입 안정
       "@typescript-eslint/no-explicit-any": "warn",
-      "@typescript-eslint/consistent-type-imports": [
-        "error",
-        { prefer: "type-imports" },
-      ],
+      "@typescript-eslint/consistent-type-imports": ["error", { prefer: "type-imports" }],
 
       // React / Next
       "react/jsx-key": "error",
