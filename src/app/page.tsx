@@ -4,7 +4,7 @@ export default function Home() {
       <h1 className="typo-32-b mb-4">Taskify</h1>
       <div className="w-[140px]">
         <p className="bg-primary-tw text-white typo-32-m p-2">
-          Refactoring Start
+          Refactoring Start (dev 브랜치에 병합)
         </p>
       </div>
     </main>
