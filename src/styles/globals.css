@@ -1,0 +1,75 @@
+@import "tailwindcss";
+@import "./variable.css";
+
+@theme inline {
+  --color-bg-tw: var(--color-bg);
+  --color-text-tw: var(--color-text);
+  --color-muted-tw: var(--color-muted);
+  --color-border-tw: var(--color-border);
+
+  --color-primary-tw: var(--color-primary);
+  --color-primary-soft-tw: var(--color-primary-soft);
+  --color-danger-tw: var(--color-danger);
+  --color-success-tw: var(--color-success);
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+}
+
+@layer components {
+  .typo-32-b {
+    font-size: 32px;
+    line-height: var(--lh-32-42);
+    font-weight: 700;
+  }
+  .typo-32-sb {
+    font-size: 32px;
+    line-height: var(--lh-32-42);
+    font-weight: 600;
+  }
+
+  .typo-24-b {
+    font-size: 24px;
+    line-height: var(--lh-24-32);
+    font-weight: 700;
+  }
+  .typo-24-sb {
+    font-size: 24px;
+    line-height: var(--lh-24-32);
+    font-weight: 600;
+  }
+  .typo-24-m {
+    font-size: 24px;
+    line-height: var(--lh-24-32);
+    font-weight: 500;
+  }
+  .typo-24-r {
+    font-size: 24px;
+    line-height: var(--lh-24-32);
+    font-weight: 400;
+  }
+
+  .typo-20-b {
+    font-size: 20px;
+    line-height: var(--lh-20-32);
+    font-weight: 700;
+  }
+  .typo-20-sb {
+    font-size: 20px;
+    line-height: var(--lh-20-32);
+    font-weight: 600;
+  }
+  .typo-20-m {
+    font-size: 20px;
+    line-height: var(--lh-20-32);
+    font-weight: 500;
+  }
+  .typo-20-r {
+    font-size: 20px;
+    line-height: var(--lh-20-32);
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,57 @@
+:root {
+  /* Font Family */
+  --font-sans: "Pretendard", -apple-system, BlinkMacSystemFont, system-ui,
+    sans-serif;
+
+  /* Typography */
+  --lh-32-42: 1.3125;
+  --lh-24-32: 1.3333;
+  --lh-20-32: 1.6;
+  --lh-18-26: 1.4444;
+  --lh-16-26: 1.625;
+  --lh-14-24: 1.7142;
+  --lh-13-22: 1.6923;
+  --lh-12-18: 1.5;
+
+  --white-ffffff: #ffffff;
+  --black-000000: #000000;
+
+  /* black scale */
+  --black-171717: #171717;
+  --black-333236: #333236;
+  --black-4b4b4b: #4b4b4b;
+
+  /* gray scale */
+  --gray-787486: #787486;
+  --gray-9fa6b2: #9fa6b2;
+  --gray-d9d9d9: #d9d9d9;
+  --gray-eeeeee: #eeeeee;
+  --gray-fafafa: #fafafa;
+
+  /* point colors */
+  --violet-5534da: #5534da;
+  --violet-f1effd: #f1effd; /* violet 8% 배경용 */
+  --red-d6173a: #d6173a;
+  --green-7ac555: #7ac555;
+  --purple-760dde: #760dde;
+  --orange-ffa500: #ffa500;
+  --blue-76a5ea: #76a5ea;
+  --pink-e876ea: #e876ea;
+
+  /* semantic colors */
+  --color-bg: var(--white-ffffff);
+  --color-text: var(--black-171717);
+  --color-muted: var(--gray-787486);
+  --color-border: var(--gray-d9d9d9);
+
+  --color-primary: var(--violet-5534da);
+  --color-primary-soft: var(--violet-f1effd);
+
+  --color-danger: var(--red-d6173a);
+  --color-success: var(--green-7ac555);
+
+  --color-tag-purple: var(--purple-760dde);
+  --color-tag-orange: var(--orange-ffa500);
+  --color-tag-blue: var(--blue-76a5ea);
+  --color-tag-pink: var(--pink-e876ea);
+}
