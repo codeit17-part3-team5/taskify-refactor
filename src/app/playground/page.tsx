@@ -1,7 +1,8 @@
 "use client";
 
-import ChipInput from "@/components/textchip/ChipInput";
 import { useState } from "react";
+
+import ChipInput from "@/components/textchip/ChipInput";
 
 export default function PlaygroundPage() {
   const [projects, setProjects] = useState<string[]>(["프론트", "디자인"]);

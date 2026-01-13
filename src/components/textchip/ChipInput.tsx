@@ -1,9 +1,8 @@
 // ChipInput.tsx
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState, KeyboardEvent } from "react";
 import Chip from "./Chip";
-import { KeyboardEvent } from "react";
 
 interface ChipInputProps {
   value: string[];
@@ -11,23 +10,8 @@ interface ChipInputProps {
   placeholder?: string;
 }
 
-type ChipItem = {
-  label: string;
-  colorIndex: number;
-};
-
 export default function ChipInput({ value, onChange, placeholder }: ChipInputProps) {
   const [input, setInput] = useState("");
-  const [chips, setChips] = useState<ChipItem[]>([]);
-
-  useEffect(() => {
-    setChips(
-      value.map((label, idx) => ({
-        label,
-        colorIndex: idx % 4,
-      })),
-    );
-  }, [value]);
 
   const addChip = (text: string) => {
     const trimmed = text.trim();
@@ -57,13 +41,8 @@ export default function ChipInput({ value, onChange, placeholder }: ChipInputPro
 
   return (
     <div className="flex flex-wrap items-center gap-2 p-2 border rounded-lg focus-within:border-blue-500 min-h-[44px]">
-      {chips.map((chip, idx) => (
-        <Chip
-          key={chip.label + idx}
-          label={chip.label}
-          colorIndex={chip.colorIndex}
-          onRemove={() => removeAt(idx)}
-        />
+      {value.map((label, idx) => (
+        <Chip key={label} label={label} colorIndex={idx % 4} onRemove={() => removeAt(idx)} />
       ))}
       <input
         className="flex-1 min-w-[120px] h-8 px-1 outline-none text-sm bg-transparent"
