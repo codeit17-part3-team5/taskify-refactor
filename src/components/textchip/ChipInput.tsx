@@ -1,7 +1,9 @@
 // ChipInput.tsx
 "use client";
 
-import { useState, KeyboardEvent } from "react";
+import type { KeyboardEvent } from "react";
+import { useState } from "react";
+
 import Chip from "./Chip";
 
 interface ChipInputProps {

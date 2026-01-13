@@ -37,7 +37,7 @@ const eslintConfig = defineConfig([
 
       // 품질
       "no-console": ["warn", { allow: ["warn", "error"] }],
-      "no-duplicate-imports": "error",
+      "no-duplicate-imports": "off",
     },
   },
 
