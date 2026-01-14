@@ -24,7 +24,27 @@ const eslintConfig = defineConfig([
         { argsIgnorePattern: "^_", varsIgnorePattern: "^_" },
       ],
 
-      "simple-import-sort/imports": "error",
+      "simple-import-sort/imports": [
+        "error",
+        {
+          groups: [
+            // 1) react/next가 항상 최상단
+            ["^react", "^next"],
+
+            // 2) 절대경로 alias (@/...)
+            ["^@/"],
+
+            // 3) 그 외 패키지들 (node_modules)
+            ["^@?\\w"],
+
+            // 4) 상대경로
+            ["^\\."],
+
+            // 5) 사이드이펙트 import (css 등)
+            ["^\\u0000"],
+          ],
+        },
+      ],
       "simple-import-sort/exports": "error",
 
       // 타입 안정
