@@ -17,7 +17,7 @@ export default function PlaygroundPage() {
           onSubmit={(e) => {
             e.preventDefault();
           }}
-          className="space-y-2 w-[360px] px-2"
+          className="space-y-2 w-90 px-2"
         >
           <label htmlFor="todo-create-tags" className="typo-14-m text-black font-bold">
             태그
