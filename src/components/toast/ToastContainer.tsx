@@ -23,8 +23,8 @@ export function ToastContainer() {
   const timerRef = useRef<number | null>(null);
 
   useEffect(() => {
-    const handleShowToast = (e: CustomEventInit) => {
-      const { message, eventType } = e.detail;
+    const handleShowToast = (e: Event) => {
+      const { message, eventType } = (e as CustomEvent<ToastType>).detail;
 
       setToast({ message, eventType });
 
