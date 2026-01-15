@@ -20,7 +20,7 @@ const TOAST_DURATION = 3000;
 
 export function ToastContainer() {
   const [toast, setToast] = useState<ToastType | null>(null);
-  const timerRef = useRef<number | null>(null); // 추가
+  const timerRef = useRef<number | null>(null);
 
   useEffect(() => {
     const handleShowToast = (e: CustomEventInit) => {
