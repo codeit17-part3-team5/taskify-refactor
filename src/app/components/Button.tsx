@@ -2,7 +2,7 @@ import type { ButtonHTMLAttributes } from 'react';
 
 import { cn } from '../lib/cn';
 
-type ButtonVariant = 'v' | 'w' | 'wv' | 'add';
+type ButtonVariant = 'v' | 'w' | 'wv' | 'add' | 'icon';
 // v: violet, w: white, wv: bg-white text-violet, add: dashboard add
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -24,6 +24,7 @@ export default function Button({ className, children, variant = 'w', ...props }:
     wv: 'text-[#5534DA] border border-[#D9D9D9] hover:bg-[#F5F5F5]',
     w: 'text-[#787486] border border-[#D9D9D9] hover:bg-[#F5F5F5]',
     add: 'font-semibold border border-[#D9D9D9] hover:bg-[#F5F5F5]',
+    icon: 'border-0 bg-transparent p-0 hover:bg-transparent active:bg-transparent shadow-none',
   }[variant];
 
   return (
