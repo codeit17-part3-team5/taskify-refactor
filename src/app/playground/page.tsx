@@ -2,8 +2,8 @@
 
 import { useState } from 'react';
 
-import ChipInput from '@/components/textchip/ChipInput';
 import ColorChip from '@/components/colorchip/ColorChip';
+import ChipInput from '@/components/textchip/ChipInput';
 
 export default function PlaygroundPage() {
   const [projects, setProjects] = useState<string[]>(['Test']);
@@ -18,7 +18,7 @@ export default function PlaygroundPage() {
           onSubmit={(e) => {
             e.preventDefault();
           }}
-          className="space-y-2 w-[360px] px-2 mb-7"
+          className="space-y-2 w-90 px-2"
         >
           <label htmlFor="todo-create-tags" className="typo-14-m text-black font-bold">
             태그
