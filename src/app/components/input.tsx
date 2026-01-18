@@ -10,6 +10,7 @@ import Button from './Button';
 import SelectInput from './SelectInput';
 
 export const INPUT_BASE = 'w-full h-12 px-4 bg-white border border-[#D9D9D9] rounded-md';
+const INVALID_CLASS = 'border-[#D6173A] focus:border-red-500 focus:ring-1 focus:ring-red-500';
 const TEXTAREA_BASE = 'min-h-[110px] p-4 resize-none';
 
 export const padIfRightIcon = (has: boolean) => (has ? 'pr-12' : 'pr-5 ');
@@ -80,7 +81,9 @@ function PasswordInput(
       <input
         id={id}
         ref={ref}
-        className={[INPUT_BASE, leftPad, rightPad, className].join(' ')}
+        className={[INPUT_BASE, leftPad, rightPad, isInvalid ? INVALID_CLASS : '', className].join(
+          ' ',
+        )}
         type={showPw ? 'text' : 'password'}
         aria-invalid={isInvalid || undefined}
         {...inputDomProps}
@@ -129,7 +132,14 @@ export default function Input(props: Props) {
         <textarea
           id={id}
           ref={ref}
-          className={[INPUT_BASE, TEXTAREA_BASE, leftPad, rightPad, className].join(' ')}
+          className={[
+            INPUT_BASE,
+            TEXTAREA_BASE,
+            leftPad,
+            rightPad,
+            isInvalid ? INVALID_CLASS : '',
+            className,
+          ].join(' ')}
           aria-invalid={isInvalid || undefined}
           {...rest}
         />
@@ -184,7 +194,9 @@ export default function Input(props: Props) {
       <input
         id={id}
         ref={ref}
-        className={[INPUT_BASE, leftPad, rightPad, className].join(' ')}
+        className={[INPUT_BASE, leftPad, rightPad, isInvalid ? INVALID_CLASS : '', className].join(
+          ' ',
+        )}
         type={type}
         aria-invalid={isInvalid || undefined}
         {...(inputDomProps as Omit<BaseInputProps, 'id' | 'ref' | 'type'>)}

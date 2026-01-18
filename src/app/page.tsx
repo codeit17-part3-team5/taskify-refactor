@@ -1,15 +1,38 @@
 'use client';
 
 import { useState } from 'react';
+import { FormProvider, useForm } from 'react-hook-form';
 
 import Button from './components/Button';
-import Input from './components/input';
+import FormField from './components/FormField';
 import Modal from './components/Modal';
 import { useModal } from './hooks/useModal';
+
+type FormValues = {
+  email: string;
+  password: string;
+  description: string;
+  category: string;
+};
 
 export default function Home() {
   const { open, openModal, closeModal } = useModal();
   const [category, setCategory] = useState('');
+
+  const methods = useForm<FormValues>({
+    defaultValues: {
+      email: '',
+      password: '',
+      description: '',
+      category: '',
+    },
+    mode: 'onBlur',
+    reValidateMode: 'onBlur',
+  });
+
+  const onSubmit = (data: FormValues) => {
+    console.log(data);
+  };
 
   return (
     <main className="p-10">
@@ -33,20 +56,58 @@ export default function Home() {
       <Button className="w-30 h-12" variant="w" onClick={openModal}>
         로그인
       </Button>
-      <Input id="email" type="email" placeholder="이메일" />
-      <Input id="password" type="password" placeholder="비밀번호" />.
-      <Input as="textarea" id="description" placeholder="댓글" />
-      <Input
-        as="select"
-        id="category"
-        value={category}
-        placeholderOption="선택"
-        options={[
-          { value: 1, label: '옵션 1' },
-          { value: 2, label: '옵션 2' },
-        ]}
-        onChange={(e) => setCategory(String(e.target.value))}
-      />
+      <FormProvider {...methods}>
+        <form onSubmit={methods.handleSubmit(onSubmit)} className="flex flex-col gap-6">
+          <FormField<FormValues>
+            name="email"
+            label="이메일"
+            rules={{
+              required: '이메일은 필수입니다.',
+              pattern: {
+                value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message: '이메일 형식이 올바르지 않습니다.',
+              },
+            }}
+            inputProps={{ placeholder: '이메일', type: 'email' }}
+          />
+
+          <FormField<FormValues>
+            name="password"
+            label="비밀번호"
+            rules={{
+              required: '비밀번호는 필수입니다.',
+              minLength: {
+                value: 6,
+                message: '비밀번호는 6자리 이상이어야 합니다.',
+              },
+            }}
+            inputProps={{ placeholder: '비밀번호', type: 'password' }}
+          />
+
+          <FormField<FormValues>
+            name="description"
+            label="설명"
+            inputProps={{ as: 'textarea', placeholder: '설명 입력' }}
+          />
+
+          <FormField<FormValues>
+            name="category"
+            label="카테고리"
+            inputProps={{
+              as: 'select',
+              placeholderOption: '선택',
+              options: [
+                { value: 'frontend', label: '프론트엔드' },
+                { value: 'backend', label: '백엔드' },
+              ],
+            }}
+          />
+
+          <Button type="submit" variant="v" className="h-12">
+            제출
+          </Button>
+        </form>
+      </FormProvider>
     </main>
   );
 }
