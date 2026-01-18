@@ -43,7 +43,7 @@ export default function Home() {
         </p>
       </div>
       <Modal open={open} onClose={closeModal} closeOnEsc closeOnOverlayClick lockScroll>
-        <div className="w-[420px] rounded-lg bg-white p-6">
+        <div className="w-30 rounded-lg bg-white p-6">
           <h2 className="text-lg font-semibold">제목</h2>
           <p className="mt-2 text-sm text-gray-600">내용</p>
 

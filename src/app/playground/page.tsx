@@ -1,11 +1,12 @@
-"use client";
+'use client';
 
-import { useState } from "react";
+import { useState } from 'react';
 
-import ChipInput from "@/components/textchip/ChipInput";
+import ColorChip from '@/components/colorchip/ColorChip';
+import ChipInput from '@/components/textchip/ChipInput';
 
 export default function PlaygroundPage() {
-  const [projects, setProjects] = useState<string[]>(["프론트", "디자인"]);
+  const [projects, setProjects] = useState<string[]>(['Test']);
 
   return (
     <main>
@@ -24,6 +25,8 @@ export default function PlaygroundPage() {
           </label>
           <ChipInput value={projects} onChange={setProjects} placeholder="입력 후 Enter" />
         </form>
+
+        <ColorChip />
       </section>
     </main>
   );
