@@ -16,7 +16,7 @@ export const DropdownTrigger = ({ label, className }: DropdownTriggerProps) => {
 
   return (
     <button
-      className={BASE_CLASSES}
+      className={`${BASE_CLASSES} ${className ?? ''}`}
       tabIndex={0}
       onClick={() => {
         handleToggle();
