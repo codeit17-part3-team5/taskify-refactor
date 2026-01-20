@@ -16,16 +16,15 @@ export const DropdownTrigger = ({ label, className }: DropdownTriggerProps) => {
 
   return (
     <button
+      className={BASE_CLASSES}
+      tabIndex={0}
       onClick={() => {
         handleToggle();
       }}
     >
-      {' '}
-      <div className={BASE_CLASSES} tabIndex={0}>
-        <div className="w-full flex content-center justify-between items-center mx-4 my-2 ">
-          {label}
-          <Image src="/icons/arrow-dropdown.svg" alt="arrow" width={26} height={26} />
-        </div>
+      <div className="w-full flex content-center justify-between items-center mx-4 my-2 ">
+        {label}
+        <Image src="/icons/arrow-dropdown.svg" alt="드롭다운메뉴열기" width={26} height={26} />
       </div>
     </button>
   );
