@@ -30,14 +30,12 @@ export const DropdownInputItem = ({
         }}
       >
         <div className="mx-4 my-2">
-          {isSelected ? (
-            <div className="flex">
-              <Image src={checkItem} alt="선택" />
-              <div className="pl-2">{children}</div>
+          <div className="flex items-center gap-2">
+            <div className="w-[22px] h-[22px] shrink-0">
+              {isSelected && <Image src={checkItem} alt="선택됨" />}
             </div>
-          ) : (
-            <div className="pl-7.5">{children}</div>
-          )}
+            {children}
+          </div>
         </div>
       </button>
     </div>
