@@ -2,8 +2,9 @@
 
 import { useState } from 'react';
 
-import ChipInput from '@/components/textchip/ChipInput';
 import ColorChip from '@/components/colorchip/ColorChip';
+import StateChipList from '@/components/statechip/StateChipList';
+import ChipInput from '@/components/textchip/ChipInput';
 
 export default function PlaygroundPage() {
   const [projects, setProjects] = useState<string[]>(['Test']);
@@ -27,6 +28,9 @@ export default function PlaygroundPage() {
         </form>
 
         <ColorChip />
+        <div className="mt-4">
+          <StateChipList />
+        </div>
       </section>
     </main>
   );
