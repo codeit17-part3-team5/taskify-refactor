@@ -2,12 +2,12 @@
 
 import { useState } from 'react';
 
+import ActionChip from '@/components/chip/actionchip/ActionChip';
 import ColorChip from '@/components/chip/colorchip/ColorChip';
 import StateChipList from '@/components/chip/statechip/StateChipList';
 import ChipInput from '@/components/chip/textchip/ChipInput';
-import ActionChip from '@/components/chip/actionchip/ActionChip';
 
-const handleClick = () => console.log('hi');
+const handleClick = () => {};
 
 export default function PlaygroundPage() {
   const [projects, setProjects] = useState<string[]>(['Test']);
