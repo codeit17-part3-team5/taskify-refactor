@@ -2,9 +2,12 @@
 
 import { useState } from 'react';
 
-import ColorChip from '@/components/colorchip/ColorChip';
-import StateChipList from '@/components/statechip/StateChipList';
-import ChipInput from '@/components/textchip/ChipInput';
+import ActionChip from '@/components/chip/actionchip/ActionChip';
+import ColorChip from '@/components/chip/colorchip/ColorChip';
+import StateChipList from '@/components/chip/statechip/StateChipList';
+import ChipInput from '@/components/chip/textchip/ChipInput';
+
+const handleClick = () => {};
 
 export default function PlaygroundPage() {
   const [projects, setProjects] = useState<string[]>(['Test']);
@@ -30,6 +33,13 @@ export default function PlaygroundPage() {
         <ColorChip />
         <div className="mt-4">
           <StateChipList />
+        </div>
+
+        <div className="flex flex-col gap-2 mt-4 ml-4">
+          <p className="text-[#5534DA]">Plus 버튼</p>
+          <ActionChip variant="task" label="할 일 생성 이미지 추가" onClick={handleClick} />
+          <ActionChip variant="avatar" label="프로필 이미지 추가" onClick={handleClick} />
+          <ActionChip variant="column" text="새 컬럼 만들기" onClick={handleClick} />
         </div>
       </section>
     </main>
