@@ -4,9 +4,9 @@ import { useState } from 'react';
 
 import ActionChip from '@/components/chip/actionchip/ActionChip';
 import ColorChip from '@/components/chip/colorchip/ColorChip';
+import CountChip from '@/components/chip/countchip/CountChip';
 import StateChipList from '@/components/chip/statechip/StateChipList';
 import ChipInput from '@/components/chip/textchip/ChipInput';
-import CountChip from '@/components/chip/countchip/CountChip';
 
 const handleClick = () => {};
 
