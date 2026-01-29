@@ -12,12 +12,11 @@ interface SearchDropdownProps {
   className?: string;
 }
 
-const BASE = 'w-54';
+const BASE = '';
 
 export const SearchDropdown = ({ children, className = BASE }: SearchDropdownProps) => {
   const [searchData, setSearchData] = useState('');
   const [isOpen, setIsOpen] = useState(false);
-  const [query, setQuery] = useState('');
   const [selectedUser, setSelectedUser] = useState<User | null>(null);
 
   const handleSearch = (data: string) => {
@@ -25,11 +24,13 @@ export const SearchDropdown = ({ children, className = BASE }: SearchDropdownPro
   };
 
   const handleToggle = useCallback(() => {
+    setSearchData('');
     setIsOpen((prev) => !prev);
   }, []);
 
   const handleClose = useCallback(() => {
     setIsOpen(false);
+    setSearchData('');
   }, []);
 
   const dropdownRef = useDropdownClose(handleClose);
@@ -41,8 +42,6 @@ export const SearchDropdown = ({ children, className = BASE }: SearchDropdownPro
         handleSearch,
         isOpen,
         handleToggle,
-        query,
-        setQuery,
         selectedUser,
         setSelectedUser,
       }}

@@ -39,9 +39,9 @@ export const SearchDropdownTrigger = ({ label, className = BASE }: SearchDropdow
         onChange={(e) => {
           handleSearch(e.target.value);
 
-          if (selectedUser && e.target.value !== selectedUser.content) {
-            setSelectedUser(null);
-          }
+          // if (selectedUser && e.target.value !== selectedUser.content) {
+          //   setSelectedUser(null);
+          // }
         }}
       />
     </div>

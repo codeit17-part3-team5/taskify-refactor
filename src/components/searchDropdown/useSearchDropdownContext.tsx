@@ -8,9 +8,6 @@ interface SearchDropdownContextValue {
   handleSearch: (value: string) => void;
   handleToggle: () => void;
 
-  query: string;
-  setQuery: (value: string) => void;
-
   selectedUser: User | null;
   setSelectedUser: (u: User | null) => void;
 }
