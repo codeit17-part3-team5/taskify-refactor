@@ -12,7 +12,7 @@ interface SearchDropdownProps {
   className?: string;
 }
 
-const BASE = '';
+const BASE = 'w-54';
 
 export const SearchDropdown = ({ children, className = BASE }: SearchDropdownProps) => {
   const [searchData, setSearchData] = useState('');
