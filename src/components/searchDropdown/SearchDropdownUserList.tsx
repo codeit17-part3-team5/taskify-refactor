@@ -27,7 +27,7 @@ export const SearchDropdownUserList = ({
       : items.filter((it) => it.content.toLowerCase().includes(searchData.toLowerCase()));
 
   if (filtered.length === 0) {
-    return;
+    return null;
   }
 
   return <div className={className}>{filtered.map(children)}</div>;
