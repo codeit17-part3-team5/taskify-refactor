@@ -16,6 +16,6 @@ export const SearchDropdownContext = createContext<SearchDropdownContextValue | 
 
 export function useSearchDropdownContext() {
   const ctx = useContext(SearchDropdownContext);
-  if (!ctx) throw new Error('Dropdown components must be used within <DropdownProvider>.');
+  if (!ctx) throw new Error('Dropdown components must be used within <SearchDropdown>.');
   return ctx;
 }
